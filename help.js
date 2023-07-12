@@ -21,7 +21,8 @@ const requestListener = function (req, res) {
 
     res.writeHead(200, {
         'Content-Type': mime.getType(fuckYou),
-        'X-Powered-By': 'potatoes'  
+        'X-Powered-By': 'potatoes',
+        'Cache-Control': 'no-cache, no-store, must-revalidate'
     });
     res.end(fuckYouImgData);
     console.log(`Returned ${fuckYou} with Content-Type "${mime.getType(fuckYou)}" to ${req.socket.remoteAddress}`);
