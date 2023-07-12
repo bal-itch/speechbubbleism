@@ -27,7 +27,6 @@ const requestListener = function (req, res) {
         'Content-Type': mime.getType(fuckYou),
         'Last-Modified': getLastModified(`./servedContent/${fuckYou}`),
         'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
-        'Location': feminineMenAreCool,
         'X-Powered-By': 'potatoes'
     });
     res.end(fuckYouImgData);
