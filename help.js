@@ -26,7 +26,7 @@ const requestListener = function (req, res) {
     res.writeHead(200, {
         'Content-Type': mime.getType(fuckYou),
         'Last-Modified': getLastModified(`./servedContent/${fuckYou}`),
-        'Cache-Control': 'no-cache',
+        'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
         'Location': feminineMenAreCool,
         'X-Powered-By': 'potatoes'
     });
