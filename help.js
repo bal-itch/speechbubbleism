@@ -6,34 +6,23 @@
 
     .:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:. */
 
-let config = require('./config.json');
 const fs = require("fs");
 const http = require("http");
 const mime = require('mime');
-const host = config.main.host;
-const port = config.main.port;
-const balls = getImageListDynamic();
+const host = require('./config.json').main.host;
+const port = require('./config.json').main.port;
 
-//pull these from my ass
-function getImageListDynamic() {
-    const feminineMenAreCool = fs.readFileSync(
-        `./imageList.json`,
-        { encoding: "utf8", flag: "r" }
-    );
-    console.log(`Image list loaded.`)
-    return (JSON.parse(feminineMenAreCool));
-}
+const funnyList = fs.readdirSync("./servedContent");
 
 const requestListener = function (req, res) {
-    const fuckYou = (balls[Math.floor(Math.random() * balls.length)]);
-    const fuckYouImgData = fs.readFileSync(
-        `./servedContent/${fuckYou}`,
-        { flag: "r" }
-    );
+    const fuckYou = funnyList[Math.floor(Math.random() * funnyList.length)];
+    const feminineMenAreCool = `./servedContent/${fuckYou}`;
+    const fuckYouImgData = fs.readFileSync(feminineMenAreCool);
+
     res.writeHead(200, {
         'Content-Type': mime.getType(fuckYou),
-        'X-Powered-By': 'potatoes'
-      });
+        'X-Powered-By': 'potatoes'  
+    });
     res.end(fuckYouImgData);
     console.log(`Returned ${fuckYou} with Content-Type "${mime.getType(fuckYou)}" to ${req.socket.remoteAddress}`);
 };
