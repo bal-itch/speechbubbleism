@@ -1,7 +1,7 @@
 /*  .:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.
 
     **WIP** Useless Discord speech bubble image API
-    2023, written by nitrate92 & HIDEN64
+    2023, written by nitrate92 & scythe
     Usage: run help.js 
 
     .:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:. */
@@ -14,7 +14,7 @@ const port = require('./config.json').main.port;
 const funnyList = fs.readdirSync("./servedContent");
 
 function getLastModified(file) {
-    const { mtime, ctime } = fs.statSync(file)
+    const { mtime } = fs.statSync(file)
     return new Date(mtime).toUTCString()
 }
 
