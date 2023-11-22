@@ -1,7 +1,7 @@
 /*  .:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.
 
     **WIP** Useless Discord speech bubble image API
-    2023, written by nitrate92 & scythe
+    2023, written by nitrate92 & HIDEN64
     Usage: run help.js 
 
     .:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:. */
